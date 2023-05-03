@@ -18,6 +18,7 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 62.5%;
+    cursor: none;
 }
 
 body {
@@ -79,31 +80,76 @@ p {
 
 .brand-link {
     text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+.hover-link:hover ~ .cursor {
+  -webkit-transform:translate(-50%, -50%) scale(8);
+      -ms-transform:translate(-50%, -50%) scale(8);
+          transform:translate(-50%, -50%) scale(8);
 }
 
 .brand {
     text-align: center;
     overflow: visible;
-}
 
-.brands a:last-child .brand {
+
+    -webkit-transition: -webkit-transform 0.1s linear;
+
+
+    transition: -webkit-transform 0.1s linear;
+
+
+    -o-transition: transform 0.1s linear;
+
+
+    transition: transform 0.1s linear;
+
+
+    transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+ } 
+
+ .brands a:last-child .brand {
     margin-bottom: 0;
 }
 
-.brand img {
-    max-width: 85%;
-    margin-bottom: 2.4rem;
-    -webkit-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
 
 .contact-me {
     text-align: center;
     font-size: 1.6rem;
     color: rgb(33, 37, 41, .8);
     margin-bottom: 5.6rem;
+} 
+
+.brand-link:hover {
+cursor: none;
 }
+
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 0.8rem;
+    background-color: rgb(33, 37, 41, .8);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+  
+  .hover-this:hover ~ .cursor {
+    -webkit-transform:translate(-50%, -50%) scale(8);
+        -ms-transform:translate(-50%, -50%) scale(8);
+            transform:translate(-50%, -50%) scale(8);
+  } 
+
+
 
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -167,4 +213,4 @@ p {
         font-size: 8.8rem;
         color: rgb(33, 37, 41, .9);
     }
-}
+} 
